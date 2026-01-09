@@ -1,0 +1,8 @@
+{
+  "name": "Malaysia Success Consultancy 2026",
+  "description": "A high-end consultancy landing page for Malaysia student and job visas, featuring an AI-powered eligibility assistant.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
