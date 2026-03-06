@@ -1,18 +1,17 @@
-
 import React from 'react';
-import { University, Landmark, Briefcase, GraduationCap, Globe, Clock } from 'lucide-react';
+import { Building2, BookOpen, Briefcase, GraduationCap, Globe, Clock } from 'lucide-react';
 
 const services = [
   {
     title: 'বিশ্বমানের ইউনিভার্সিটি',
     description: 'মালয়েশিয়ার কিউএস র‍্যাঙ্কিংভুক্ত ইউনিভার্সিটি থেকে পড়াশোনা করে পরবর্তীতে UK, USA বা অস্ট্রেলিয়ায় ক্রেডিট ট্রান্সফারের সুবিধা।',
-    icon: University,
+    icon: Building2,
     color: 'bg-blue-500',
   },
   {
     title: 'এক্সপার্ট ভিসা প্রসেসিং',
     description: 'EMGS আবেদন থেকে শুরু করে স্টিকার ভিসা পর্যন্ত নিখুঁত তত্ত্বাবধান। MQA অ্যাক্রিডিটেশন নিশ্চিতে আমরা বদ্ধপরিকর।',
-    icon: Landmark,
+    icon: BookOpen,
     color: 'bg-purple-500',
   },
   {
@@ -46,7 +45,7 @@ const Services: React.FC = () => {
     <section id="services" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-indigo-600 font-semibold tracking-wide uppercase">আমাদের বিশেষত্ব</h2>
+          <h2 className="text-emerald-600 font-semibold tracking-wide uppercase">আমাদের বিশেষত্ব</h2>
           <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-slate-900 sm:text-4xl">
             কেন মালয়েশিয়াকে বেছে নেবেন?
           </p>
@@ -59,7 +58,7 @@ const Services: React.FC = () => {
           {services.map((service, index) => (
             <div 
               key={index}
-              className="group relative bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:border-indigo-200 transition-all hover:shadow-xl hover:-translate-y-2 overflow-hidden"
+              className="group relative bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:border-emerald-200 transition-all hover:shadow-xl hover:-translate-y-2 overflow-hidden"
             >
               <div className={`inline-flex p-3 rounded-2xl ${service.color} text-white mb-6 group-hover:scale-110 transition-transform`}>
                 <service.icon className="h-8 w-8" />
