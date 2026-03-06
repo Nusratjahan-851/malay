@@ -1,35 +1,82 @@
-export class VisaAiService {
-  async sendMessage(message: string): Promise<string> {
-    const msg = message.toLowerCase();
-    
-    // Simulate thinking delay (AI এর মতো একটু সময় নিয়ে উত্তর দেবে)
-    await new Promise(resolve => setTimeout(resolve, 1500));
+import React from 'react';
+import { Building2, BookOpen, Briefcase, GraduationCap, Globe, Clock } from 'lucide-react';
 
-    if (msg.includes("খরচ") || msg.includes("টাকা") || msg.includes("fee") || msg.includes("cost")) {
-      return "মালয়েশিয়ায় টিউশন ফি ইউনিভার্সিটি ও সাবজেক্ট ভেদে ভিন্ন হয়। বছরে সাধারণত ২-৪ লক্ষ টাকা লাগতে পারে। সঠিক হিসাব জানতে +60 18-317 2275 (হোয়াটসঅ্যাপ) নম্বরে মোহনা ম্যামের সাথে কথা বলুন।";
-    }
-    
-    if (msg.includes("স্কলারশিপ") || msg.includes("scholarship") || msg.includes("mis")) {
-      return "হ্যাঁ! মালয়েশিয়ায় MIS স্কলারশিপের মাধ্যমে সম্পূর্ণ ফ্রিতে মাস্টার্স বা পিএইচডি করা সম্ভব। আপনার সিজিপিএ ৩.০০+ এবং আইইএলটিএস (IELTS) ৬.০ থাকলে আবেদন করতে পারবেন।";
-    }
-    
-    if (msg.includes("বয়স") || msg.includes("age")) {
-      return "ব্যাচেলরের জন্য সাধারণত ১৮-২৪ বছর এবং মাস্টার্সের জন্য ৪০ বছর পর্যন্ত আবেদন করা যায়। আপনার প্রোফাইলটি আমাদের পাঠালে আমরা বিস্তারিত বলতে পারব।";
-    }
+const services = [
+  {
+    title: 'বিশ্বমানের ইউনিভার্সিটি',
+    description: 'মালয়েশিয়ার কিউএস র‍্যাঙ্কিংভুক্ত ইউনিভার্সিটি থেকে পড়াশোনা করে পরবর্তীতে UK, USA বা অস্ট্রেলিয়ায় ক্রেডিট ট্রান্সফারের সুবিধা।',
+    icon: Building2, // Changed from University
+    color: 'bg-blue-500',
+  },
+  {
+    title: 'এক্সপার্ট ভিসা প্রসেসিং',
+    description: 'EMGS আবেদন থেকে শুরু করে স্টিকার ভিসা পর্যন্ত নিখুঁত তত্ত্বাবধান। MQA অ্যাক্রিডিটেশন নিশ্চিতে আমরা বদ্ধপরিকর।',
+    icon: BookOpen, // Changed from Landmark
+    color: 'bg-purple-500',
+  },
+  {
+    title: 'ক্যারিয়ার ও জব সাপোর্ট',
+    description: 'পড়াশোনা শেষে ১২ মাসের গ্র্যাজুয়েট পাস এবং আইটি, ইঞ্জিনিয়ারিং ও বিজনেসের মতো ডিমান্ডিং সাবজেক্টে জব অ্যাসিস্ট্যান্স।',
+    icon: Briefcase,
+    color: 'bg-green-500',
+  },
+  {
+    title: 'পড়াশোনার পাশাপাশি কাজ',
+    description: 'ভ্যাকেশন পিরিয়ডে সপ্তাহে সর্বোচ্চ ২০ ঘণ্টা পার্ট-টাইম কাজ করার সুযোগ, যা আপনার জীবনযাত্রার খরচ কমাতে সাহায্য করবে।',
+    icon: GraduationCap,
+    color: 'bg-amber-500',
+  },
+  {
+    title: 'ইন্টারন্যাশনাল ক্রেডিট ট্রান্সফার',
+    description: 'সহজেই মালয়েশিয়া থেকে আপনার ক্রেডিট ব্রিটেন, অস্ট্রেলিয়া বা কানাডায় ট্রান্সফার করার গাইডলাইন ও প্রসেসিং সাপোর্ট।',
+    icon: Globe,
+    color: 'bg-red-500',
+  },
+  {
+    title: 'সস্তায় উন্নত জীবনমান',
+    description: 'ইউরোপ-আমেরিকার তুলনায় অনেক কম খরচে বিশ্বমানের ডিগ্রি এবং উন্নত জীবনযাপনের নিশ্চয়তা।',
+    icon: Clock,
+    color: 'bg-indigo-500',
+  },
+];
 
-    if (msg.includes("যোগাযোগ") || msg.includes("অফিস") || msg.includes("address") || msg.includes("location")) {
-      return "আমাদের অফিস মালয়েশিয়ার কুয়ালালামপুরে (Lot 1.22, Plaza Berjaya, Bukit Bintang)। আপনি +60 18-317 2275 নম্বরে সরাসরি মোহনা ইয়াসমিন (Head of Business Development)-এর সাথে কথা বলতে পারেন।";
-    }
+const Services: React.FC = () => {
+  return (
+    <section id="services" className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-emerald-600 font-semibold tracking-wide uppercase">আমাদের বিশেষত্ব</h2>
+          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            কেন মালয়েশিয়াকে বেছে নেবেন?
+          </p>
+          <div className="mt-4 max-w-2xl mx-auto text-xl text-slate-500">
+            উন্নত ক্যারিয়ার ও সাশ্রয়ী উচ্চশিক্ষার জন্য মালয়েশিয়া বর্তমান বিশ্বের অন্যতম শীর্ষ গন্তব্য।
+          </div>
+        </div>
 
-    if (msg.includes("কে আপনি") || msg.includes("who are you") || msg.includes("নাম কি")) {
-      return "আমি EasyGlobal Education Consultancy-এর স্মার্ট এআই অ্যাসিস্ট্যান্ট। মোহনা ইয়াসমিন ম্যামের নির্দেশনায় আমি আপনাদের প্রাথমিক তথ্য দিয়ে সাহায্য করছি।";
-    }
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <div 
+              key={index}
+              className="group relative bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:border-emerald-200 transition-all hover:shadow-xl hover:-translate-y-2 overflow-hidden"
+            >
+              <div className={`inline-flex p-3 rounded-2xl ${service.color} text-white mb-6 group-hover:scale-110 transition-transform`}>
+                <service.icon className="h-8 w-8" />
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h3>
+              <p className="text-slate-600 leading-relaxed">
+                {service.description}
+              </p>
+              
+              <div className="absolute -right-4 -bottom-4 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity">
+                <service.icon className="h-32 w-32" />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
 
-    if (msg.includes("নম্বর") || msg.includes("number") || msg.includes("ফোন") || msg.includes("call")) {
-      return "মালয়েশিয়া: +60 18-317 2275 \nবাংলাদেশ: +880 1303-647198 \nইমেইল: mohona@egedumy.com";
-    }
-
-    // Default Reply
-    return "আপনার প্রশ্নটি বুঝতে পেরেছি। তবে প্রতিটি শিক্ষার্থীর প্রোফাইল ভিন্ন হয়, তাই সঠিক গাইডলাইনের জন্য দয়া করে আমাদের হেড অফ বিজনেস ডেভেলপমেন্ট, মোহনা ইয়াসমিন ম্যামের হোয়াটসঅ্যাপে (+60 18-317 2275) সরাসরি মেসেজ দিন।";
-  }
-}
+export default Services;
